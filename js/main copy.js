@@ -15,6 +15,8 @@ mySpan.onclick = function () {
 };
 // scrolling to top button
 
+window.onload = checkThemeFromLocal;
+
 // progress bar filling
 let allSpans = document.querySelectorAll(".bars .prog > span");
 let targetSection = document.querySelector(".skills-sec");
@@ -76,10 +78,10 @@ window.addEventListener("scroll", () => {
 let settingButton = document.querySelector(".setting-icon");
 let settingSec = document.querySelector(".setting-sec");
 let themes = document.querySelectorAll(".theme");
+let arrOfThemeIcons = document.querySelectorAll(".theme span");
 let landImg = document.querySelector(".land-img");
 let skiImg = document.querySelector(".ski-img");
 let conImg = document.querySelector(".con-img");
-
 
 // Click to open setting bar
 settingButton.addEventListener("click", function () {
@@ -91,6 +93,25 @@ document.addEventListener("click", function (event) {
     settingSec.classList.remove("hide-sec");
   }
 });
+
+////// get theme from local storage after page loading
+function checkThemeFromLocal() {
+  if (window.localStorage.getItem("Ptheme") === "one") {
+    changeToTheme1();
+  } else if (window.localStorage.getItem("Ptheme") === "two") {
+    changeToTheme2();
+  } else {
+    changeToTheme3();
+  }
+  themes.forEach((th) => {
+    th.classList.remove("active");
+  });
+  themes.forEach((th) => {
+    if (th.classList.contains(`${window.localStorage.getItem("Ptheme")}`)) {
+      th.classList.add("active");
+    }
+  });
+}
 
 //// functions to change theme
 function changeToTheme1() {
@@ -131,23 +152,27 @@ function changeToTheme3() {
 }
 
 //// changing theme technique
+
+function triggerThemes(e) {
+  if (e.currentTarget.classList[0] === "theme1") {
+    setTimeout(changeToTheme1, 100);
+    window.localStorage.setItem("Ptheme", "one");
+  } else if (e.currentTarget.classList[0] === "theme2") {
+    setTimeout(changeToTheme2, 100);
+    window.localStorage.setItem("Ptheme", "two");
+  } else {
+    setTimeout(changeToTheme3, 100);
+    window.localStorage.setItem("Ptheme", "three");
+  }
+}
+
 themes.forEach((th) => {
   th.addEventListener("click", function (e) {
     themes.forEach((th) => {
       th.classList.remove("active");
     });
     e.currentTarget.classList.add("active");
-    console.log(e.currentTarget.classList);
-    if (e.currentTarget.classList[0] === "theme1") {
-      setTimeout(changeToTheme1, 100);
-      window.localStorage.setItem("theme1", "one");
-    } else if (e.currentTarget.classList[0] === "theme2") {
-      setTimeout(changeToTheme2, 100);
-      window.localStorage.setItem("theme2", "two");
-    } else {
-      setTimeout(changeToTheme3, 100);
-      window.localStorage.setItem("theme3", "three");
-    }
+    triggerThemes(e);
   });
 });
 
