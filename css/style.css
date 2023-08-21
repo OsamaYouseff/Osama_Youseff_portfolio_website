@@ -1039,7 +1039,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   margin-bottom: 5px;
 }
 .card .tech span {
-  color: var(--text-color);
+  color: var(--master-color);
   background-color: var(--third-color);
   padding: 0px 5px;
   font-size: 14px;
