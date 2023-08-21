@@ -744,11 +744,12 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 .serveries-sec .container .services {
-  display: grid;
-  transition: var(--transition);
-  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-  gap: 3.125rem;
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+  gap: 25px;
+  transition: var(--transition);
+  padding: 0 20px;
 }
 .serveries-sec .container::before {
   content: "";
@@ -771,10 +772,10 @@ nav ul li:nth-child(5).active ~ .indicator {
   border: 0.0625rem solid var(--text-color);
   cursor: pointer;
   user-select: none;
-  border-radius: 0.375rem;
+  border-radius: 10px;
 }
 .services .box:hover {
-  transform: translateY(-0.6875rem) scale(1.01);
+  transform: translateY(-0.6875rem);
 }
 .services .box:before {
   content: "";
@@ -812,7 +813,8 @@ nav ul li:nth-child(5).active ~ .indicator {
   position: relative;
   padding: 0.9375rem 1.25rem;
   text-align: end;
-  background-color: #f9f9f9;
+  border-top: 1px solid var(--text-color);
+  background-color: var(--text-color);
   overflow: hidden;
   border-radius: 0.375rem;
 }
@@ -879,6 +881,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   justify-content: center;
   align-items: center;
   position: relative;
+  gap: 30px 20px;
 }
 
 .tabs {
@@ -933,7 +936,7 @@ nav ul li:nth-child(5).active ~ .indicator {
 .card {
   position: relative;
   max-width: calc((100% / 2) - (2 * 15px));
-  min-height: 330px;
+  min-height: 390px;
   background: var(--sixth-color);
   border-radius: 0.875rem;
   z-index: 5;
@@ -1350,9 +1353,11 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 .my-CV .container .content .resume .social-media {
   gap: 1.5625rem;
-  scale: 1.2;
   margin-top: 2.5rem;
   max-width: 18.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .my-CV .container .content .resume .social-media > a {
@@ -1484,7 +1489,7 @@ span[class="top_button"] {
   );
   background-size: 200% 100%;
   background-position: right bottom;
-  z-index: 999;
+  z-index: 990;
 }
 
 .show_button > i {
