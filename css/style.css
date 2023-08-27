@@ -44,7 +44,7 @@ ul li {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--fifth-color);
-  border: 2px solid var(--third-color);
+  border: 0.125rem solid var(--third-color);
   border-radius: 1.25rem;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -653,14 +653,14 @@ nav ul li:nth-child(5).active ~ .indicator {
 .skills-sec .container .skills .tools {
   width: 45%;
   max-width: 50%;
-  gap: 30px;
+  gap: 1.875rem;
 }
 .skills-sec .container .skills .tools .head {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   text-align: center;
-  font-size: 20px;
-  padding: 5px;
+  font-size: 1.25rem;
+  padding: 0.3125rem;
 }
 
 .skills-sec .container .skills .tools .head::before {
@@ -670,7 +670,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   left: 50%;
   transform: translateX(-50%);
   width: 30%;
-  max-width: 100px;
+  max-width: 6.25rem;
   height: 0.25rem;
   background-color: var(--text-color);
   border-radius: 0.625rem;
@@ -679,8 +679,8 @@ nav ul li:nth-child(5).active ~ .indicator {
 .skills-sec .container .skills .tools-box {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
+  gap: 1.875rem;
 }
 
 @media (max-width: 61.9375rem) {
@@ -746,10 +746,10 @@ nav ul li:nth-child(5).active ~ .indicator {
 .serveries-sec .container .services {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(16.625rem, 1fr));
+  gap: 1.5625rem;
   transition: var(--transition);
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 .serveries-sec .container::before {
   content: "";
@@ -772,7 +772,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   border: 0.0625rem solid var(--text-color);
   cursor: pointer;
   user-select: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .services .box:hover {
   transform: translateY(-0.6875rem);
@@ -813,7 +813,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   position: relative;
   padding: 0.9375rem 1.25rem;
   text-align: end;
-  border-top: 1px solid var(--text-color);
+  border-top: 0.0625rem solid var(--text-color);
   background-color: var(--text-color);
   overflow: hidden;
   border-radius: 0.375rem;
@@ -881,7 +881,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   justify-content: center;
   align-items: center;
   position: relative;
-  gap: 30px 20px;
+  gap: 1.875rem 1.25rem;
 }
 
 .tabs {
@@ -892,8 +892,8 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 .tabs li {
-  /* min-width: 150px; */
-  padding: 7px 25px;
+  /* min-width: 9.375rem; */
+  padding: 0.4375rem 1.5625rem;
   text-align: center;
   background-color: var(--fifth-color);
   border: 0.125rem solid var(--text-color);
@@ -921,22 +921,22 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 .img-expend {
-  width: 370px;
+  width: 23.125rem;
   position: relative;
   opacity: 1;
 }
 
 .img-shrink {
-  width: 0px;
-  margin: -10px;
+  width: 0rem;
+  margin: -0.625rem;
   opacity: 0;
   position: absolute !important;
 }
 
 .card {
   position: relative;
-  max-width: calc((100% / 2) - (2 * 15px));
-  min-height: 390px;
+  max-width: calc((100% / 2) - (2 * 0.9375rem));
+  min-height: 24.375rem;
   background: var(--sixth-color);
   border-radius: 0.875rem;
   z-index: 5;
@@ -949,27 +949,28 @@ nav ul li:nth-child(5).active ~ .indicator {
   color: var(--text-color);
   overflow: hidden;
   cursor: pointer;
-  margin: 10px;
+  margin: 0.625rem;
   box-shadow: 0 0 0.625rem var(--fourth-color);
   transition: var(--transition) ease-out;
-  padding: 10px;
+  padding: 0.625rem;
+  padding-bottom: 0.9375rem;
 }
 
-@media (min-width: 1190px) {
+@media (min-width: 74.375rem) {
   .card {
-    max-width: calc((100% / 3) - (3 * 15px));
-    /* min-height: 230px; */
+    max-width: calc((100% / 3) - (3 * 0.9375rem));
+    /* min-height: 14.375rem; */
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 61.9375rem) {
   .card {
-    min-width: calc((100% / 2) - (2 * 15px));
+    min-width: calc((100% / 2) - (2 * 0.9375rem));
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
   .card {
-    min-height: 180px;
+    min-height: 11.25rem;
     min-width: 100%;
   }
 }
@@ -977,84 +978,94 @@ nav ul li:nth-child(5).active ~ .indicator {
 .card img {
   max-width: 100%;
   border: 0.0625rem solid var(--text-color);
-  border-radius: 6px;
+  border-radius: 0.375rem;
+}
+
+.card .title {
+  font-size: 1.25rem;
+  min-width: 50%;
+  color: var(--text-color);
+  margin: 0.9375rem 0rem;
+  padding: 0.3125rem 1.875rem;
+  border-radius: 0.375rem;
+  text-align: center;
+  background-color: var(--hight-contrast);
+  border: 0.0625rem solid var(--second-color);
 }
 
 .card .links {
-  position: absolute;
-  top: 0%;
   width: 100%;
   height: 100%;
   min-height: 4.0625rem;
-  margin-inline: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   transition: var(--transition) ease-in-out;
-  backdrop-filter: blur(7px);
-  opacity: 0;
-  background-color: #de68a128;
+  backdrop-filter: blur(0.4375rem);
+  background-color: var(--hight-contrast);
+  border-radius: 0.375rem;
 }
 
-.card:hover .links {
-  opacity: 1;
-}
-
-.card .links > * {
+.card .links > a {
   background-color: var(--master-color);
   border: 0.0625rem solid var(--text-color);
-  width: 7.5rem;
-  padding: 6px 0;
+  min-height: 2.5rem;
+  min-width: 6.875rem;
+  max-height: 2.5rem;
+  padding: 0.3125rem 0.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--text-color);
-  border-radius: 0.25rem;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
   box-shadow: 0 0 0.625rem transparent;
-  transition: (--transition) ease-in-out;
-}
-
-.card .links a {
   transition: var(--transition);
 }
-
-.card .links *:hover {
-  box-shadow: 0 0 0.625rem var(--master-color);
+.card .links a:hover {
+  border-color: var(--master-color);
+  background-color: var(--third-color);
 }
 
-.card .title {
-  font-size: 20px;
-  color: var(--text-color);
-  margin: 10px 0px;
-  padding: 5px 30px;
-  border-radius: 6px;
-  text-align: start;
-  background-color: var(--hight-contrast);
-  border: 1px solid var(--second-color);
+.card .links > a span {
+  font-size: 0.9375rem;
+  text-transform: uppercase !important;
+  letter-spacing: 0.125rem;
+  transition: var(--transition) ease-in-out;
 }
+.card .links a i {
+  font-size: 1.125rem;
+  transition: var(--transition) ease-in-out;
+}
+
+.card .links a:hover span,
+.card .links a:hover i {
+  color: var(--master-color);
+}
+
 .card .tech {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 5px 20px;
-  gap: 10px;
-  margin-bottom: 5px;
+  padding: 0.3125rem 1.25rem;
+  gap: 0.625rem;
+  margin: 0.5rem;
 }
 .card .tech span {
   color: var(--master-color);
   background-color: var(--third-color);
-  padding: 0px 5px;
-  font-size: 14px;
-  border-radius: 6px;
+  padding: 0rem 0.3125rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
 }
 .card .description {
   color: var(--text-color);
   text-align: start;
-  padding: 5px 20px;
-  font-size: 14px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
   background-color: var(--hight-contrast);
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
 .preview-window {
@@ -1076,15 +1087,15 @@ nav ul li:nth-child(5).active ~ .indicator {
   height: 110%;
   filter: blur(0.0625rem);
   -webkit-filter: blur(1rem);
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(0.4375rem);
 }
 
 .preview-img {
   width: 95%;
   position: relative;
   z-index: 9999;
-  border: 1px solid var(--text-color);
-  border-radius: 8px;
+  border: 0.0625rem solid var(--text-color);
+  border-radius: 0.5rem;
 }
 
 /* projects-sec */
@@ -1098,7 +1109,6 @@ nav ul li:nth-child(5).active ~ .indicator {
     var(--master-color) 0%,
     var(--hight-contrast) 99%
   );
-  /* padding-bottom: 6.25rem; */
 }
 
 .Contact-sec .container {
@@ -1165,7 +1175,7 @@ nav ul li:nth-child(5).active ~ .indicator {
   letter-spacing: 0.0475rem;
   position: relative;
   z-index: 2;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 .Contact-sec .container .contact > form .box > textarea {
   height: 10.625rem;
@@ -1240,13 +1250,13 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 .Contact-sec .container .contact .submit-btn {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem;
   color: var(--master-color);
   font-weight: 500;
-  border: 1px solid var(--text-color);
+  border: 0.0625rem solid var(--text-color);
   background: var(--third-color);
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   transition: var(--transition);
 }
 .Contact-sec .container .contact .submit-btn:hover {
@@ -1315,9 +1325,17 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 .my-CV .container .content .resume .more-info p {
-  font-size: 22px;
+  font-size: 1.375rem;
   width: 60%;
 }
+
+@media (max-width: 47.9375rem) {
+  .my-CV .container .content .resume .more-info p {
+    font-size: 1.375rem;
+    width: 100%;
+  }
+}
+
 .my-CV .container .content .resume .btns {
   display: flex;
   justify-content: flex-start;
@@ -1670,9 +1688,9 @@ span[class="top_button"] {
     font-size: 1.1875rem;
     text-align: center;
     margin-right: 0.3125rem;
-    border: 1px solid var(--master-color);
-    padding: 4px;
-    border-radius: 4px;
+    border: 0.0625rem solid var(--master-color);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
   }
 }
 

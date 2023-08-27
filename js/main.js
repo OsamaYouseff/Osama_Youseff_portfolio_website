@@ -309,7 +309,10 @@ document.addEventListener("click", function (e) {
 });
 
 myProjects.forEach(function (pro) {
-  pro.addEventListener("click", function previewProject() {
+  pro.addEventListener("click", function (e) {
+    if (e.target.classList == "none") {
+      return;
+    }
     let myDiv = document.createElement("div");
     myDiv.classList = "preview-window";
     let myImg = this.children[0].cloneNode(true);
