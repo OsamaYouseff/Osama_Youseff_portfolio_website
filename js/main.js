@@ -291,9 +291,7 @@ let myProjects = Array.from(document.querySelectorAll(".card"));
 let myImgs = Array.from(document.querySelectorAll(".card img"));
 
 document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("card")) {
-    e.target.addEventListener("click", previewProject);
-  } else if (e.target.classList.contains("preview-window")) {
+  if (e.target.classList.contains("preview-window")) {
     animateDown(e.target);
     setTimeout(() => {
       e.target.remove();
@@ -310,18 +308,25 @@ document.addEventListener("click", function (e) {
 
 myProjects.forEach(function (pro) {
   pro.addEventListener("click", function (e) {
-    if (e.target.classList == "none") {
+    ///// if user click on any link ignore preview image
+    if (
+      e.target.classList == "none" ||
+      e.target.parentElement.classList.contains("no-preview")
+    ) {
       return;
+    } else {
+      console.log(e.target.parentElement);
+      console.log(e.target.parentElement.classList);
+      let myDiv = document.createElement("div");
+      myDiv.classList = "preview-window";
+      let myImg = this.children[0].cloneNode(true);
+      myImg.classList = "preview-img";
+      myDiv.appendChild(myImg);
+      document.body.appendChild(myDiv);
+      setTimeout(() => {
+        animateUp(myDiv);
+      }, 0);
     }
-    let myDiv = document.createElement("div");
-    myDiv.classList = "preview-window";
-    let myImg = this.children[0].cloneNode(true);
-    myImg.classList = "preview-img";
-    myDiv.appendChild(myImg);
-    document.body.appendChild(myDiv);
-    setTimeout(() => {
-      animateUp(myDiv);
-    }, 0);
   });
 });
 
