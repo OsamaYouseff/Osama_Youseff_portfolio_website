@@ -130,7 +130,7 @@ ul li {
 /* Global variables */
 
 /* page */
-.page {
+.landing-page {
   width: 100vw;
   min-height: 100vh;
   background-size: cover;
@@ -142,7 +142,7 @@ ul li {
   );
   overflow-x: hidden;
 }
-.page::before {
+.landing-page::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -296,19 +296,19 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 /* side-bar */
 
-.page .side-bar {
+.landing-page .side-bar {
   width: 6.25rem;
   min-height: 100vh;
   transition: var(--transition);
 }
 
 @media (max-width: 47.9375rem) {
-  .page .side-bar {
+  .landing-page .side-bar {
     width: 4.6875rem;
   }
 }
 
-.page .side-bar .social {
+.landing-page .side-bar .social {
   position: relative;
   display: flex;
   align-items: center;
@@ -318,13 +318,13 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 @media (max-width: 47.9375rem) {
-  .page .side-bar .social {
+  .landing-page .side-bar .social {
     align-items: center;
     min-width: auto;
   }
 }
 
-.page .side-bar .social a {
+.landing-page .side-bar .social a {
   position: relative;
   aspect-ratio: 1 / 1;
   border: 0.0938rem solid transparent;
@@ -335,14 +335,14 @@ nav ul li:nth-child(5).active ~ .indicator {
   max-height: 2.5rem;
 }
 
-.page .side-bar .social a:hover {
+.landing-page .side-bar .social a:hover {
   transform: translateX(-1.5625rem);
   border-color: var(--text-color);
   border-right-color: transparent;
   min-width: 2.5rem;
 }
 
-.page .side-bar .social a::before {
+.landing-page .side-bar .social a::before {
   position: absolute;
   content: "\f060";
   font-family: "Font Awesome 5 Free";
@@ -354,21 +354,21 @@ nav ul li:nth-child(5).active ~ .indicator {
   scale: 0;
 }
 
-.page .side-bar .social a svg {
+.landing-page .side-bar .social a svg {
   transform: scale(1.2);
   min-width: 1.5rem;
   min-height: 1.5rem;
   transition: var(--transition);
 }
-.page .side-bar .social a:hover svg {
+.landing-page .side-bar .social a:hover svg {
   transform: scale(0.9);
 }
-.page .side-bar .social a svg path {
+.landing-page .side-bar .social a svg path {
   fill: var(--text-color);
   transition: calc(var(--transition) * 0.7) linear;
 }
 
-.page .side-bar .social a span {
+.landing-page .side-bar .social a span {
   width: fit-content;
   height: 100%;
   position: absolute;
@@ -386,35 +386,35 @@ nav ul li:nth-child(5).active ~ .indicator {
   outline: 0.0625rem solid transparent;
 }
 
-.page .side-bar .social a:hover span {
+.landing-page .side-bar .social a:hover span {
   transform: translateX(3.625rem);
   outline-color: var(--text-color);
 }
 
 @media (max-width: 47.9375rem) {
-  .page .side-bar .social a {
+  .landing-page .side-bar .social a {
     min-width: 2.5rem;
     scale: 0.8;
   }
-  .page .side-bar .social a:hover {
+  .landing-page .side-bar .social a:hover {
     transform: translateX(-0.625rem);
   }
-  .page .side-bar .social a span {
+  .landing-page .side-bar .social a span {
     min-width: 3.4375rem;
     min-width: 4.375rem;
   }
-  .page .side-bar .social a:hover span {
+  .landing-page .side-bar .social a:hover span {
     transform: translateX(3.4375rem);
   }
 }
 
-.page .side-bar > .space {
+.landing-page .side-bar > .space {
   min-height: 6.25rem;
 }
 
 /* side-bar */
 
-.page .content {
+.landing-page .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -422,7 +422,7 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 @media (max-width: 61.9375rem) {
-  .page .content {
+  .landing-page .content {
     padding: 1.25rem 0.625rem;
     margin-top: -4.375rem;
   }
@@ -430,46 +430,46 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 /* hi-sec */
 
-.page .content .hi-sec .container {
+.landing-page .content .hi-sec .container {
   gap: 3.125rem;
   padding: 0 3.75rem;
   transition: var(--transition);
 }
 
 @media (min-width: 61.9375rem) {
-  .page .content .hi-sec .container {
+  .landing-page .content .hi-sec .container {
     justify-content: space-around;
     gap: 0;
   }
 }
 @media (max-width: 61.9375rem) {
-  .page .content .hi-sec .container {
+  .landing-page .content .hi-sec .container {
     padding: 4.625rem 1.25rem;
     flex-direction: column-reverse;
     gap: 0rem;
   }
 }
 
-.page .content .hi-sec .container .txt {
+.landing-page .content .hi-sec .container .txt {
   flex: 2;
   gap: 0.9375rem;
 }
 @media (max-width: 61.9375rem) {
-  .page .content .hi-sec .container .txt {
+  .landing-page .content .hi-sec .container .txt {
     min-width: 100%;
     padding: 3.125rem 0rem;
   }
 }
 
-.page .content .hi-sec .container .txt p {
+.landing-page .content .hi-sec .container .txt p {
   color: var(--third-color);
   letter-spacing: 0.125rem;
 }
-.page .content .hi-sec .container .txt h1 {
+.landing-page .content .hi-sec .container .txt h1 {
   color: var(--third-color);
   font-size: 3.125rem;
 }
-.page .content .hi-sec .container .txt h1::before {
+.landing-page .content .hi-sec .container .txt h1::before {
   content: "";
   position: absolute;
   width: 3.75rem;
@@ -480,23 +480,23 @@ nav ul li:nth-child(5).active ~ .indicator {
   border-radius: 0.625rem;
 }
 
-.page .content .hi-sec .container .txt h2 {
+.landing-page .content .hi-sec .container .txt h2 {
   font-size: 1.0625rem;
   letter-spacing: 0.0625rem;
   font-weight: normal;
   color: var(--text-color);
 }
-.page .content .hi-sec .container .txt .btns > a:first-of-type {
+.landing-page .content .hi-sec .container .txt .btns > a:first-of-type {
   margin-right: 0.9375rem;
 }
 
 @media (max-width: 61.9375rem) {
-  .page .content .hi-sec .container .txt .btns > a:first-of-type {
+  .landing-page .content .hi-sec .container .txt .btns > a:first-of-type {
     display: block;
     margin-bottom: 1.25rem;
   }
 }
-.page .content .hi-sec .container .txt .btns > a > input {
+.landing-page .content .hi-sec .container .txt .btns > a > input {
   padding: 0.625rem 1.25rem;
   outline: none;
   background: var(--text-color);
@@ -515,25 +515,25 @@ nav ul li:nth-child(5).active ~ .indicator {
   background-position: right bottom;
   font-size: 0.9375rem;
 }
-.page .content .hi-sec .container .txt .btns > a > input:hover {
+.landing-page .content .hi-sec .container .txt .btns > a > input:hover {
   color: var(--text-color);
   background-position: left bottom;
   border-color: var(--text-color);
 }
 
-.page .content .hi-sec .container .img-sec {
+.landing-page .content .hi-sec .container .img-sec {
   min-width: 31.25rem;
   max-width: 50rem;
   flex: 3;
   z-index: 1;
 }
 @media (max-width: 61.9375rem) {
-  .page .content .hi-sec .container .img-sec {
+  .landing-page .content .hi-sec .container .img-sec {
     min-width: 90%;
   }
 }
 @media (max-width: 47.9375rem) {
-  .page .content .hi-sec .container .img-sec {
+  .landing-page .content .hi-sec .container .img-sec {
     min-width: 120%;
   }
 }
