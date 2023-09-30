@@ -315,6 +315,8 @@ myProjects.forEach(function (pro) {
     ) {
       return;
     } else {
+      console.log(e.target.parentElement);
+      console.log(e.target.parentElement.classList);
       let myDiv = document.createElement("div");
       myDiv.classList = "preview-window";
       let myImg = this.children[0].cloneNode(true);
