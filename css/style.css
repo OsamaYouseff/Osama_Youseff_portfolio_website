@@ -678,9 +678,12 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 .skills-sec .container .skills .tools-box {
   width: 100%;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
   gap: 1.875rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 61.9375rem) {
@@ -696,6 +699,7 @@ nav ul li:nth-child(5).active ~ .indicator {
 }
 
 .skills-sec .container .skills .tools .tool {
+  min-height: 120px;
   background-color: var(--fifth-color);
   text-align: center;
   border: 0.0625rem solid var(--text-color);
@@ -745,12 +749,16 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 .serveries-sec .container .services {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16.625rem, 1fr));
+  display: flex;
+  /* grid-template-columns: repeat(auto-fill, minmax(16.625rem, 1fr)); */
   gap: 1.5625rem;
   transition: var(--transition);
   padding: 0 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 .serveries-sec .container::before {
   content: "";
   position: absolute;
@@ -764,7 +772,9 @@ nav ul li:nth-child(5).active ~ .indicator {
 
 .services .box {
   position: relative;
-  transition: var(--transition);
+  min-width: 310px;
+  width: calc(100% / 4 - 1.25rem);
+  max-width: calc(100% / 4 - 1.25rem);
   background-color: var(--third-color);
   background: var(--master-color);
   transition: var(--transition);
@@ -773,10 +783,13 @@ nav ul li:nth-child(5).active ~ .indicator {
   cursor: pointer;
   user-select: none;
   border-radius: 0.625rem;
+  transition: var(--transition);
 }
+
 .services .box:hover {
   transform: translateY(-0.6875rem);
 }
+
 .services .box:before {
   content: "";
   position: absolute;
