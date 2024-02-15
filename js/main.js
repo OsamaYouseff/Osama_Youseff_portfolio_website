@@ -125,7 +125,7 @@ let data1 = [
   `<img src="images/git-c.svg" alt="Git-logo" />`,
   `<img src="images/github-c.svg" alt="GitHub-logo" />`,
   '<img src="images/vs-code-c.svg" alt="vs-code-logo" />',
-  '<img src="images/notion-c.svg" alt="notion-logo" />',
+  '<img src="images/database-c.png" alt="database-logo" />',
 
 ];
 let data2 = [
@@ -140,7 +140,7 @@ let data2 = [
   `<img src="images/git.svg" alt="Git-logo" />`,
   `<img src="images/github.svg" alt="GitHub-logo" />`,
   '<img src="images/vs-code.png" alt="vs-code-logo" />',
-  '<img src="images/notion.svg" alt="notion-logo" />',
+  '<img src="images/database.png" alt="database-logo" />',
 ];
 
 function changeIcons(currData) {
@@ -159,6 +159,7 @@ function changeIcons(currData) {
 
 //// variables
 let settingButton = document.querySelector(".setting-icon");
+let settingButtonI = document.querySelector(".setting-icon i");
 let settingSec = document.querySelector(".setting-sec");
 let themes = document.querySelectorAll(".theme");
 let arrOfThemeIcons = document.querySelectorAll(".theme span");
@@ -166,14 +167,26 @@ let landImg = document.querySelector(".land-img");
 let skiImg = document.querySelector(".ski-img");
 let conImg = document.querySelector(".con-img");
 
+
+function changeSettingIcon() {
+  if (settingButtonI.classList == "fa-solid fa-gear fa-xl") {
+    settingButtonI.classList = `fa-solid fa-x fa-lg`;
+  } else {
+    settingButtonI.classList = `fa-solid fa-gear fa-xl`;
+  }
+}
+
 // Click to open setting bar
 settingButton.addEventListener("click", function () {
   settingSec.classList.toggle("hide-sec");
+  changeSettingIcon()
 });
 
+///// close setting bar when click outside of it
 document.addEventListener("click", function (event) {
-  if (!settingSec.contains(event.target)) {
+  if (!settingSec.contains(event.target) && settingSec.classList.contains("hide-sec")) {
     settingSec.classList.remove("hide-sec");
+    changeSettingIcon()
   }
 });
 
