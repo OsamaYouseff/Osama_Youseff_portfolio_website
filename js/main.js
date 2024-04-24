@@ -388,9 +388,9 @@ let myInputs = [nameInput, emailInput, subjectInput, detailsInput];
 myInputs.forEach((input) => {
   input.oninput = function () {
     if (input.value === "" || input.value.length === 0) {
-      submitBtn.classList.add("hide");
+      submitBtn.classList.add("disabled");
     } else {
-      submitBtn.classList.remove("hide");
+      submitBtn.classList.remove("disabled");
     }
   };
 });
@@ -417,3 +417,4 @@ let years = Math.trunc(diffTime / (1000 * 60 * 60 * 24 * 365.25));
 myAge.textContent = years;
 
 //////  -------------------------------------------------// [set age ] // ----------------------------------------------------
+
