@@ -126,7 +126,9 @@ let data1 = [
   `<img src="images/github-c.svg" alt="GitHub-logo" />`,
   '<img src="images/vs-code-c.svg" alt="vs-code-logo" />',
   '<img src="images/database-c.png" alt="database-logo" />',
-
+  '<img src="images/cpp-c.svg" alt="database-logo" />',
+  '<img src="images/cSharp-c.svg" alt="database-logo" />',
+  '<img src="images/postman-c.svg" alt="database-logo" />',
 ];
 let data2 = [
   '<img src="images/html.svg" alt="html-logo" />',
@@ -141,6 +143,9 @@ let data2 = [
   `<img src="images/github.svg" alt="GitHub-logo" />`,
   '<img src="images/vs-code.png" alt="vs-code-logo" />',
   '<img src="images/database.png" alt="database-logo" />',
+  '<img src="images/cpp.svg" alt="database-logo" />',
+  '<img src="images/cSharp.svg" alt="database-logo" />',
+  '<img src="images/postman.svg" alt="database-logo" />',
 ];
 
 function changeIcons(currData) {
@@ -159,7 +164,7 @@ function changeIcons(currData) {
 
 //// variables
 let settingButton = document.querySelector(".setting-icon");
-let settingButtonI = document.querySelector(".setting-icon i");
+let settingButtonI = document.querySelector(".setting-icon");
 let settingSec = document.querySelector(".setting-sec");
 let themes = document.querySelectorAll(".theme");
 let arrOfThemeIcons = document.querySelectorAll(".theme span");
@@ -168,13 +173,20 @@ let skiImg = document.querySelector(".ski-img");
 let conImg = document.querySelector(".con-img");
 
 
+
 function changeSettingIcon() {
-  if (settingButtonI.classList == "fa-solid fa-gear fa-xl") {
-    settingButtonI.classList = `fa-solid fa-x fa-lg`;
+  if (settingButtonI.classList.contains("fa-gear")) {
+    settingButtonI.classList.remove("fa-gear");
+    settingButtonI.classList.add("fa-xmark");
   } else {
-    settingButtonI.classList = `fa-solid fa-gear fa-xl`;
+    settingButtonI.classList.remove("fa-xmark");
+    settingButtonI.classList.add("fa-gear");
   }
 }
+
+
+// fa-solid fa-xmark
+// fa-solid fa-gear fa-xl
 
 // Click to open setting bar
 settingButton.addEventListener("click", function () {
@@ -401,20 +413,133 @@ myInputs.forEach((input) => {
 
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
-//////  -------------------------------------------------// [set Year] // ----------------------------------------------------
+// //////  -------------------------------------------------// [set Year] // ----------------------------------------------------
 
-//////  ------------------------------------------------- [set age ]  ----------------------------------------------------
+//////  -------------------------------------------------// [change Language ] // ----------------------------------------------------
 
-let myAge = document.getElementById("age");
+// scripts.js
+function changeLanguage(language) {
+  // Get all elements that have data attributes for different languages
+  const elements = document.querySelectorAll('[data-en], [data-es]');
+  // Loop through each element and update its text content based on the selected language
+  elements.forEach(element => {
+    element.textContent = element.getAttribute(`data-${language}`);
+  });
+}
 
-let TodayDate = new Date();
-let myBirthDayDate = new Date("11/01/2002");
+// Optionally, save the user's language preference to localStorage
+function saveLanguagePreference(language) {
+  localStorage.setItem('preferredLanguage', language);
+}
 
-let diffTime = Math.abs(TodayDate - myBirthDayDate);
+function loadLanguagePreference() {
+  const preferredLanguage = localStorage.getItem('preferredLanguage');
+  if (preferredLanguage == "ar")
+    document.querySelectorAll('.language-sec .tabs > input')[0].click();
+  else
+    document.querySelectorAll('.language-sec .tabs > input')[1].click();
 
-let years = Math.trunc(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+  setLanguageClassForElements()
+}
 
-myAge.textContent = years;
+function changeDefaultRadioBtn(preferredLanguage) {
+  const radioBtns = document.querySelectorAll('.language-sec .tabs > input');
+  if (preferredLanguage == "ar") {
+    radioBtns[0].checked = true;
+  } else {
+    radioBtns[1].checked = true;
+  }
+}
 
-//////  -------------------------------------------------// [set age ] // ----------------------------------------------------
+function changeFontForTheEntirePage(preferredLanguage) {
+  if (preferredLanguage == "ar")
+    // document.body.style.fontFamily = 'SF Pro Text, "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui';
+    document.body.style.fontFamily = '"Cairo", sans-serif';
+  else
+    document.body.style.fontFamily = 'Poppins, sans-serif !important';
+
+}
+
+function changeDirectionForTheEntirePage(preferredLanguage) {
+
+  if (preferredLanguage == "ar")
+    document.body.style.direction = 'rtl';
+  else
+    document.body.style.direction = 'ltr';
+
+}
+
+function toggleSocialClass() {
+  ///// prevent over click if the chosen language is already selected
+  const socials = document.querySelector('.social');
+  const HiSection = document.querySelector('.hi-sec');
+  const myCV = document.querySelector('.my-CV');
+  const Contact = document.querySelector('.contact');
+
+
+
+  if (localStorage.getItem('preferredLanguage') == socials.classList[1].toLowerCase()) return;
+
+  if (socials.classList.contains('ar') && !socials.classList.contains('en')) {
+    toggleClass(socials, 'ar', 'en');
+    toggleClass(HiSection, 'ar', 'en');
+    toggleClass(myCV, 'ar', 'en');
+    toggleClass(Contact, 'ar', 'en');
+  } else {
+    toggleClass(socials, 'en', 'ar');
+    toggleClass(Contact, 'en', 'ar');
+    toggleClass(HiSection, 'en', 'ar');
+    toggleClass(myCV, 'en', 'ar');
+  }
+
+}
+
+function setLanguageClassForElements() {
+  const preferredLanguage = localStorage.getItem('preferredLanguage');
+  const HiSection = document.querySelector('.hi-sec');
+  const myCV = document.querySelector('.my-CV');
+  const Contact = document.querySelector('.contact');
+
+  console.log(Contact);
+
+  if (preferredLanguage == "ar") {
+    toggleClass(HiSection, 'en', 'ar');
+    toggleClass(myCV, 'en', 'ar');
+    toggleClass(Contact, 'en', 'ar');
+  } else {
+    toggleClass(HiSection, 'ar', 'en');
+    toggleClass(myCV, 'ar', 'en');
+    toggleClass(Contact, 'ar', 'en');
+  }
+
+}
+
+
+function toggleClass(element, oldClass, updatedClass) {
+  element.classList.remove(oldClass);
+  element.classList.add(updatedClass);
+}
+
+
+// Load the preferred language when the page is loaded
+document.addEventListener('DOMContentLoaded', loadLanguagePreference);
+
+// Add event listeners to the language buttons
+
+document.querySelectorAll('.language-sec .tabs > input').forEach(button => {
+  button.addEventListener('click', (event) => {
+    const language = event.target.value.toLowerCase();
+    changeLanguage(language);
+    changeDirectionForTheEntirePage(language)
+    changeFontForTheEntirePage(language)
+    saveLanguagePreference(language);
+    toggleSocialClass()
+  });
+});
+
+
+
+
+
+//////  -------------------------------------------------// [change Language ] // ----------------------------------------------------
 
