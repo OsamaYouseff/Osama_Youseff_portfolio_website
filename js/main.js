@@ -173,7 +173,6 @@ let skiImg = document.querySelector(".ski-img");
 let conImg = document.querySelector(".con-img");
 
 
-
 function changeSettingIcon() {
   if (settingButtonI.classList.contains("fa-gear")) {
     settingButtonI.classList.remove("fa-gear");
@@ -183,10 +182,6 @@ function changeSettingIcon() {
     settingButtonI.classList.add("fa-gear");
   }
 }
-
-
-// fa-solid fa-xmark
-// fa-solid fa-gear fa-xl
 
 // Click to open setting bar
 settingButton.addEventListener("click", function () {
@@ -417,8 +412,7 @@ document.getElementById("year").innerHTML = new Date().getFullYear();
 
 //////  -------------------------------------------------// [change Language ] // ----------------------------------------------------
 
-// scripts.js
-function changeLanguage(language) {
+function changeLanguageForElements(language) {
   // Get all elements that have data attributes for different languages
   const elements = document.querySelectorAll('[data-en], [data-es]');
   // Loop through each element and update its text content based on the selected language
@@ -438,8 +432,8 @@ function loadLanguagePreference() {
     document.querySelectorAll('.language-sec .tabs > input')[0].click();
   else
     document.querySelectorAll('.language-sec .tabs > input')[1].click();
-
   setLanguageClassForElements()
+
 }
 
 function changeDefaultRadioBtn(preferredLanguage) {
@@ -470,51 +464,39 @@ function changeDirectionForTheEntirePage(preferredLanguage) {
 }
 
 function toggleSocialClass() {
-  ///// prevent over click if the chosen language is already selected
   const socials = document.querySelector('.social');
 
+  ///// prevent over click if the chosen language is already selected
   if (localStorage.getItem('preferredLanguage') == socials.classList[1].toLowerCase()) return;
 
-  const HiSection = document.querySelector('.hi-sec');
-  const myCV = document.querySelector('.my-CV');
-  const Contact = document.querySelector('.contact');
-  const navBar = document.querySelector('nav');
+  const elements = [...document.querySelectorAll('.hi-sec, .my-CV, .contact, nav'), socials];
 
   if (socials.classList.contains('ar') && !socials.classList.contains('en')) {
-    toggleClass(socials, 'ar', 'en');
-    toggleClass(HiSection, 'ar', 'en');
-    toggleClass(myCV, 'ar', 'en');
-    toggleClass(Contact, 'ar', 'en');
-    toggleClass(navBar, 'ar', 'en');
-  } else {
-    toggleClass(socials, 'en', 'ar');
-    toggleClass(Contact, 'en', 'ar');
-    toggleClass(HiSection, 'en', 'ar');
-    toggleClass(myCV, 'en', 'ar');
-    toggleClass(navBar, 'en', 'ar');
+    elements.forEach(element => {
+      toggleClass(element, 'ar', 'en');
+    });
+  }
+  else {
+    elements.forEach(element => {
+      toggleClass(element, 'en', 'ar');
+    });
   }
 
 }
 
 function setLanguageClassForElements() {
   const preferredLanguage = localStorage.getItem('preferredLanguage');
-  const HiSection = document.querySelector('.hi-sec');
-  const myCV = document.querySelector('.my-CV');
-  const Contact = document.querySelector('.contact');
-  const navBar = document.querySelector('nav');
+  const elements = [...document.querySelectorAll('.hi-sec, .my-CV, .contact, nav')];
 
   if (preferredLanguage == "ar") {
-    toggleClass(HiSection, 'en', 'ar');
-    toggleClass(myCV, 'en', 'ar');
-    toggleClass(Contact, 'en', 'ar');
-    toggleClass(navBar, 'en', 'ar');
+    elements.forEach(element => {
+      toggleClass(element, 'en', 'ar');
+    });
   } else {
-    toggleClass(HiSection, 'ar', 'en');
-    toggleClass(myCV, 'ar', 'en');
-    toggleClass(Contact, 'ar', 'en');
-    toggleClass(navBar, 'ar', 'en');
+    elements.forEach(element => {
+      toggleClass(element, 'ar', 'en');
+    });
   }
-
 }
 
 
@@ -527,12 +509,12 @@ function toggleClass(element, oldClass, updatedClass) {
 // Load the preferred language when the page is loaded
 document.addEventListener('DOMContentLoaded', loadLanguagePreference);
 
-// Add event listeners to the language buttons
 
+// Add event listeners to the language buttons
 document.querySelectorAll('.language-sec .tabs > input').forEach(button => {
   button.addEventListener('click', (event) => {
     const language = event.target.value.toLowerCase();
-    changeLanguage(language);
+    changeLanguageForElements(language);
     changeDirectionForTheEntirePage(language)
     changeFontForTheEntirePage(language)
     saveLanguagePreference(language);
@@ -540,9 +522,4 @@ document.querySelectorAll('.language-sec .tabs > input').forEach(button => {
   });
 });
 
-
-
-
-
 //////  -------------------------------------------------// [change Language ] // ----------------------------------------------------
-
