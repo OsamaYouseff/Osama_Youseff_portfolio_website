@@ -665,6 +665,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     z-index: 1;
 }
 
+
 @media (max-width: 61.9375rem) {
     .landing-page .content .hi-sec .container .img-sec {
         min-width: 90%;
@@ -1673,6 +1674,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
     z-index: 1;
 }
 
+.my-CV.ar .container .content .img-sec {
+    transform: rotateY(180deg);
+}
+
+
 @media (max-width: 61.9375rem) {
     .my-CV .container .content .img-sec {
         min-width: 70%;
@@ -1851,12 +1857,21 @@ span[class="top_button"] {
     transform: rotate(0.5turn);
 }
 
+.setting-sec div>div {
+    margin-bottom: 1.5625rem;
+    gap: 4px;
+}
+.languages-sec >div {
+    margin-bottom: 1.5625rem;
+    gap: 4px;
+}
+
+
 .setting-sec div>p {
     width: 100%;
     color: var(--master-color);
     font-size: 18px;
     letter-spacing: 1px;
-    margin-bottom: 1.5625rem;
     user-select: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;

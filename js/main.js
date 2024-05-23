@@ -472,24 +472,26 @@ function changeDirectionForTheEntirePage(preferredLanguage) {
 function toggleSocialClass() {
   ///// prevent over click if the chosen language is already selected
   const socials = document.querySelector('.social');
+
+  if (localStorage.getItem('preferredLanguage') == socials.classList[1].toLowerCase()) return;
+
   const HiSection = document.querySelector('.hi-sec');
   const myCV = document.querySelector('.my-CV');
   const Contact = document.querySelector('.contact');
-
-
-
-  if (localStorage.getItem('preferredLanguage') == socials.classList[1].toLowerCase()) return;
+  const navBar = document.querySelector('nav');
 
   if (socials.classList.contains('ar') && !socials.classList.contains('en')) {
     toggleClass(socials, 'ar', 'en');
     toggleClass(HiSection, 'ar', 'en');
     toggleClass(myCV, 'ar', 'en');
     toggleClass(Contact, 'ar', 'en');
+    toggleClass(navBar, 'ar', 'en');
   } else {
     toggleClass(socials, 'en', 'ar');
     toggleClass(Contact, 'en', 'ar');
     toggleClass(HiSection, 'en', 'ar');
     toggleClass(myCV, 'en', 'ar');
+    toggleClass(navBar, 'en', 'ar');
   }
 
 }
@@ -499,17 +501,18 @@ function setLanguageClassForElements() {
   const HiSection = document.querySelector('.hi-sec');
   const myCV = document.querySelector('.my-CV');
   const Contact = document.querySelector('.contact');
-
-  console.log(Contact);
+  const navBar = document.querySelector('nav');
 
   if (preferredLanguage == "ar") {
     toggleClass(HiSection, 'en', 'ar');
     toggleClass(myCV, 'en', 'ar');
     toggleClass(Contact, 'en', 'ar');
+    toggleClass(navBar, 'en', 'ar');
   } else {
     toggleClass(HiSection, 'ar', 'en');
     toggleClass(myCV, 'ar', 'en');
     toggleClass(Contact, 'ar', 'en');
+    toggleClass(navBar, 'ar', 'en');
   }
 
 }
