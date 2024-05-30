@@ -113,7 +113,7 @@ window.addEventListener("scroll", () => {
 
 //// variables
 let icons = Array.from(document.querySelectorAll(".tool "));
-let data1 = [
+let colorfulImgs = [
   '<img src="images/html-c.svg" alt="html-logo" />',
   '<img src="images/css-c.svg" alt="css-logo" />',
   '<img src="images/javascript-c.svg" alt="javascript-logo" />',
@@ -127,10 +127,10 @@ let data1 = [
   '<img src="images/vs-code-c.svg" alt="vs-code-logo" />',
   '<img src="images/database-c.png" alt="database-logo" />',
   '<img src="images/cpp-c.svg" alt="database-logo" />',
-  '<img src="images/cSharp-c.svg" alt="database-logo" />',
-  '<img src="images/postman-c.svg" alt="database-logo" />',
+  '<img src="images/cSharp-c.svg" alt="cSharp-logo" />',
+  '<img src="images/postman-c.svg" alt="postman-logo" />',
 ];
-let data2 = [
+let darkImgs = [
   '<img src="images/html.svg" alt="html-logo" />',
   '<img src="images/css.svg" alt="css-logo" />',
   '<img src="images/javascript.svg" alt="javascript-logo" />',
@@ -144,8 +144,25 @@ let data2 = [
   '<img src="images/vs-code.png" alt="vs-code-logo" />',
   '<img src="images/database.png" alt="database-logo" />',
   '<img src="images/cpp.svg" alt="database-logo" />',
-  '<img src="images/cSharp.svg" alt="database-logo" />',
-  '<img src="images/postman.svg" alt="database-logo" />',
+  '<img src="images/cSharp.svg" alt="cSharp-logo" />',
+  '<img src="images/postman.svg" alt="postman-logo" />',
+];
+let lightImages = [
+  '<img src="images/html-w.svg" alt="html-logo" />',
+  '<img src="images/css-w.svg" alt="css-logo" />',
+  '<img src="images/javascript-w.svg" alt="javascript-logo" />',
+  `<img src="images/typescript-w.svg" alt="typescript-logo" />`,
+  `<img src="images/reactjs-w.svg" alt="reactjs-logo" />`,
+  `<img src="images/redux-w.svg" alt="redux-logo" />`,
+  `<img src="images/bootstrap-w.svg" alt="bootstrap-logo" />`,
+  '<img src="images/tailwind-css-w.svg" alt="tailwind-css-logo" />',
+  `<img src="images/git-w.svg" alt="Git-logo" />`,
+  `<img src="images/github-w.svg" alt="GitHub-logo" />`,
+  '<img src="images/vs-code-w.svg" alt="vs-code-logo" />',
+  '<img src="images/database-w.png" alt="database-logo" />',
+  '<img src="images/cpp-w.svg" alt="database-logo" />',
+  '<img src="images/cSharp-w.svg" alt="cSharp-logo" />',
+  '<img src="images/postman-w.svg" alt="postman-logo" />',
 ];
 
 function changeIcons(currData) {
@@ -287,17 +304,17 @@ function changeThemeImages(number) {
 function changeToTheme1() {
   changeColorsVariables(colorVariables, theme1Colors);
   changeThemeImages(1);
-  changeIcons(data1);
+  changeIcons(colorfulImgs);
 }
 function changeToTheme2() {
   changeColorsVariables(colorVariables, theme2Colors);
   changeThemeImages(2);
-  changeIcons(data2);
+  changeIcons(lightImages);
 }
 function changeToTheme3() {
   changeColorsVariables(colorVariables, theme3Colors);
   changeThemeImages(2);
-  changeIcons(data2);
+  changeIcons(darkImgs);
 }
 
 //// changing theme technique

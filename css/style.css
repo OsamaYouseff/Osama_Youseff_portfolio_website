@@ -153,9 +153,11 @@ ul li {
     min-height: 100vh;
     background-size: cover;
     background-color: var(--master-color);
-    background-image: linear-gradient(176deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 99%);
+    background-image: linear-gradient(
+        176deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 99%
+    );
     overflow-x: hidden;
 }
 
@@ -176,6 +178,7 @@ ul li {
 
 nav {
     width: 28.125rem;
+    max-width: 100%;
     height: 3.75rem;
     display: flex;
     justify-content: center;
@@ -193,12 +196,11 @@ nav {
     /* animation: start 0.6s ease-out 1 forwards; */
 }
 
-@media (max-width: 500px) {
+@media (max-width: 37.5rem) {
     nav {
-        top: 4px;
+        top: .625rem;
         border-radius: 0;
     }
-
 }
 
 @media (max-width: 25rem) {
@@ -306,38 +308,35 @@ nav ul li.active a .text {
     border-radius: 0.625rem;
 }
 
-
-
-nav.en ul li:nth-child(2).active~.indicator {
+nav.en ul li:nth-child(2).active ~ .indicator {
     transform: translateX(calc(5rem * 1));
 }
 
-nav.en ul li:nth-child(3).active~.indicator {
+nav.en ul li:nth-child(3).active ~ .indicator {
     transform: translateX(calc(5rem * 2));
 }
 
-nav.en ul li:nth-child(4).active~.indicator {
+nav.en ul li:nth-child(4).active ~ .indicator {
     transform: translateX(calc(5rem * 3));
 }
 
-nav.en ul li:nth-child(5).active~.indicator {
+nav.en ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(5rem * 4));
 }
 
-
-nav.ar ul li:nth-child(2).active~.indicator {
+nav.ar ul li:nth-child(2).active ~ .indicator {
     transform: translateX(calc(5rem * -1));
 }
 
-nav.ar ul li:nth-child(3).active~.indicator {
+nav.ar ul li:nth-child(3).active ~ .indicator {
     transform: translateX(calc(5rem * -2));
 }
 
-nav.ar ul li:nth-child(4).active~.indicator {
+nav.ar ul li:nth-child(4).active ~ .indicator {
     transform: translateX(calc(5rem * -3));
 }
 
-nav.ar ul li:nth-child(5).active~.indicator {
+nav.ar ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(5rem * -4));
 }
 
@@ -353,7 +352,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
 
 @media (max-width: 47.9375rem) {
     .landing-page .side-bar {
-        width: 4.6875rem;
+        width: 3.5rem;
     }
 }
 
@@ -397,7 +396,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
     border-left-color: transparent;
 }
 
-
 .landing-page .side-bar .social.en a:hover {
     transform: translateX(-1.5625rem);
 }
@@ -405,7 +403,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
 .landing-page .side-bar .social.ar a:hover {
     transform: translateX(1.5625rem);
 }
-
 
 .landing-page .side-bar .social a::before {
     position: absolute;
@@ -471,8 +468,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
     transform: translateX(6.25rem);
 }
 
-
-
 .landing-page .side-bar .social.en a:hover span {
     transform: translateX(3.625rem);
     outline-color: var(--text-color);
@@ -507,7 +502,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     }
 }
 
-.landing-page .side-bar>.space {
+.landing-page .side-bar > .space {
     min-height: 6.25rem;
 }
 
@@ -522,7 +517,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
 
 @media (max-width: 61.9375rem) {
     .landing-page .content {
-        padding: 1.25rem 0.625rem;
+        padding: 3.25rem 0.225rem;
         margin-top: -4.375rem;
     }
 }
@@ -544,7 +539,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
 
 @media (max-width: 61.9375rem) {
     .landing-page .content .hi-sec .container {
-        padding: 4.625rem 1.25rem;
+        padding: 2.625rem 0.25rem 2.625rem 0.25rem;
         flex-direction: column-reverse;
         gap: 0rem;
     }
@@ -587,7 +582,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
     left: 0;
 }
 
-
 .landing-page .content .hi-sec.ar .container .txt h1::before {
     position: absolute;
     right: 0;
@@ -610,9 +604,9 @@ nav.ar ul li:nth-child(5).active~.indicator {
 } */
 
 @media (max-width: 61.9375rem) {
-    .landing-page .content .hi-sec .container .txt .btns>a:first-of-type {
+    .landing-page .content .hi-sec .container .txt .btns > a:first-of-type {
         display: block;
-        /* margin-bottom: 10px; */
+        /* margin-bottom: .625rem; */
         /* margin: 0; */
     }
 }
@@ -627,22 +621,38 @@ nav.ar ul li:nth-child(5).active~.indicator {
     border: 0.0938rem solid var(--master-color);
     transition: calc(var(--transition) * 1.5);
     cursor: pointer;
-    background-image: linear-gradient(to right,
-            var(--master-color) 50%,
-            var(--text-color) 50%);
+    background-image: linear-gradient(
+        to right,
+        var(--master-color) 50%,
+        var(--text-color) 50%
+    );
     background-size: 200% 100%;
     background-position: right bottom;
     font-size: 0.9375rem;
 }
+@media (max-width: 61.9375rem) {
+    .hi-sec .hero-btn {
+        padding: 0.625rem 0.45rem;
+        min-width: 7.5rem;
+    }
+}
 
 .hi-sec.en .hero-btn {
     background-position: right bottom !important;
-    background-image: linear-gradient(to right, var(--master-color) 50%, var(--text-color) 50%) !important;
+    background-image: linear-gradient(
+        to right,
+        var(--master-color) 50%,
+        var(--text-color) 50%
+    ) !important;
 }
 
 .hi-sec.ar .hero-btn {
     background-position: left bottom !important;
-    background-image: linear-gradient(to left, var(--master-color) 50%, var(--text-color) 50%) !important;
+    background-image: linear-gradient(
+        to left,
+        var(--master-color) 50%,
+        var(--text-color) 50%
+    ) !important;
 }
 
 .hi-sec .hero-btn:hover {
@@ -665,18 +675,18 @@ nav.ar ul li:nth-child(5).active~.indicator {
     z-index: 1;
 }
 
-
 @media (max-width: 61.9375rem) {
     .landing-page .content .hi-sec .container .img-sec {
-        min-width: 90%;
+        min-width: 100%;
+        max-width: 100%;
     }
 }
 
-@media (max-width: 47.9375rem) {
+/* @media (max-width: 47.9375rem) {
     .landing-page .content .hi-sec .container .img-sec {
-        min-width: 120%;
+        min-width: 100%;
     }
-}
+} */
 
 /* hi-sec */
 
@@ -748,9 +758,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
     min-width: 100vw;
     max-width: 100vw;
     padding: 1.875rem;
-    background-image: linear-gradient(10deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 99%);
+    background-image: linear-gradient(
+        10deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 99%
+    );
 }
 
 @media (max-width: 47.9375rem) {
@@ -838,7 +850,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
 }
 
 @media (max-width: 61.9375rem) {
-
     .skills-sec .container .skills .image,
     .skills-sec .container .skills .tools {
         width: 90%;
@@ -853,11 +864,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
 
 .skills-sec .container .skills .tools .tool {
     min-height: 7.5rem;
-    background-color: var(--fifth-color);
+    /* background-color: var(--fifth-color); */
     text-align: center;
     border: 0.0625rem solid var(--text-color);
     border-radius: 0.25rem;
-    box-shadow: 0 0 1.25rem var(--fourth-color), inset 0 0 1.25rem transparent;
+    box-shadow: 0 0 0.6rem var(--fourth-color), inset 0 0 0.6rem transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -873,12 +884,12 @@ nav.ar ul li:nth-child(5).active~.indicator {
     scale: 1.1;
 }
 
-.skills-sec .container .skills .tools .tool>img {
+.skills-sec .container .skills .tools .tool > img {
     scale: 1.3;
     transition: var(--transition) ease-in-out;
 }
 
-.skills-sec .container .skills .tools .tool>p {
+.skills-sec .container .skills .tools .tool > p {
     margin-top: 0.5rem;
     font-size: 1rem;
 }
@@ -888,9 +899,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
 .serveries-sec {
     min-width: 100vw;
     max-width: 100vw;
-    background-image: linear-gradient(166deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 99%);
+    background-image: linear-gradient(
+        166deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 99%
+    );
 }
 
 .serveries-sec .container {
@@ -1047,9 +1060,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
     min-width: 100vw;
     width: 100vw;
     max-width: 100vw;
-    background-image: linear-gradient(387deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 100%);
+    background-image: linear-gradient(
+        387deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 100%
+    );
 
     /* padding-bottom: 6.25rem; */
 }
@@ -1138,7 +1153,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
 
 .card {
     position: relative;
-    width: 23.125rem;
+    width: 19.125rem;
     max-width: calc((100% / 3.03) - (2 * 0.9375rem));
     min-height: 33.375rem;
     max-height: 40.375rem;
@@ -1196,7 +1211,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
     }
 }
 
-
 .card .title {
     width: 100%;
     font-size: 1.25rem;
@@ -1223,7 +1237,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     border-radius: 0.375rem;
 }
 
-.card .links>a {
+.card .links > a {
     background-color: var(--master-color);
     border: 0.0625rem solid var(--text-color);
     min-height: 2.5rem;
@@ -1245,7 +1259,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     background-color: var(--third-color);
 }
 
-.card .links>a span {
+.card .links > a span {
     font-size: 0.9375rem;
     text-transform: uppercase !important;
     letter-spacing: 0.125rem;
@@ -1335,9 +1349,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
 .Contact-sec {
     min-width: 100vw;
     max-width: 100vw;
-    background-image: linear-gradient(157deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 99%);
+    background-image: linear-gradient(
+        157deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 99%
+    );
 }
 
 .Contact-sec .container {
@@ -1359,7 +1375,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     max-width: 100%;
 }
 
-.Contact-sec .container .contact>form {
+.Contact-sec .container .contact > form {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -1377,7 +1393,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     }
 
     .Contact-sec .container .contact,
-    .Contact-sec .container .contact>form {
+    .Contact-sec .container .contact > form {
         width: 100%;
     }
 
@@ -1386,19 +1402,19 @@ nav.ar ul li:nth-child(5).active~.indicator {
     }
 }
 
-.Contact-sec .container .contact>form .box {
+.Contact-sec .container .contact > form .box {
     position: relative;
     width: 100%;
     cursor: pointer;
 }
 
-.Contact-sec .container .contact>form .box label {
+.Contact-sec .container .contact > form .box label {
     opacity: 0;
     position: absolute;
 }
 
-.Contact-sec .container .contact>form .box>input,
-.Contact-sec .container .contact>form .box>textarea {
+.Contact-sec .container .contact > form .box > input,
+.Contact-sec .container .contact > form .box > textarea {
     width: 100%;
     border: none;
     outline: none;
@@ -1412,13 +1428,13 @@ nav.ar ul li:nth-child(5).active~.indicator {
     border-radius: 0.5rem;
 }
 
-.Contact-sec .container .contact>form .box>textarea {
+.Contact-sec .container .contact > form .box > textarea {
     height: 10.625rem;
     resize: none;
     width: 100%;
 }
 
-.Contact-sec .container .contact>form .box>span {
+.Contact-sec .container .contact > form .box > span {
     position: absolute;
     top: 0;
     left: 0;
@@ -1427,15 +1443,12 @@ nav.ar ul li:nth-child(5).active~.indicator {
     color: var(--text-color);
 }
 
-
-.Contact-sec .container .contact.ar>form .box>span {
+.Contact-sec .container .contact.ar > form .box > span {
     position: absolute;
     right: 0;
 }
 
-
-
-.Contact-sec .container .contact>form .box>textarea~span {
+.Contact-sec .container .contact > form .box > textarea ~ span {
     position: absolute;
     top: -20%;
     left: 0;
@@ -1444,7 +1457,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     color: var(--text-color);
 }
 
-.Contact-sec .container .contact>form .box>i {
+.Contact-sec .container .contact > form .box > i {
     height: 0.25rem;
     transition: var(--transition);
     border-radius: 0.25rem;
@@ -1452,13 +1465,15 @@ nav.ar ul li:nth-child(5).active~.indicator {
     position: absolute;
     bottom: 0;
     left: 0;
-    background: linear-gradient(45deg,
-            var(--third-color) 0%,
-            var(--fourth-color) 100%);
+    background: linear-gradient(
+        45deg,
+        var(--third-color) 0%,
+        var(--fourth-color) 100%
+    );
     border: 0.0625rem solid transparent;
 }
 
-.Contact-sec .container .contact>form .box>textarea~i {
+.Contact-sec .container .contact > form .box > textarea ~ i {
     height: 0.3125rem;
     transition: var(--transition);
     border-radius: 0.25rem;
@@ -1466,29 +1481,31 @@ nav.ar ul li:nth-child(5).active~.indicator {
     position: absolute;
     top: 0%;
     left: 0;
-    background: linear-gradient(45deg,
-            var(--third-color) 0%,
-            var(--fourth-color) 100%);
+    background: linear-gradient(
+        45deg,
+        var(--third-color) 0%,
+        var(--fourth-color) 100%
+    );
     cursor: pointer;
     border: 0.0625rem solid transparent;
 }
 
-.Contact-sec .container .contact>form .box>input:focus~span,
-.Contact-sec .container .contact>form .box>input:valid~span {
+.Contact-sec .container .contact > form .box > input:focus ~ span,
+.Contact-sec .container .contact > form .box > input:valid ~ span {
     transform: translateY(-2rem);
     font-size: 0.85rem;
 }
 
-.Contact-sec .container .contact>form .box>textarea:focus~span,
-.Contact-sec .container .contact>form .box>textarea:valid~span {
+.Contact-sec .container .contact > form .box > textarea:focus ~ span,
+.Contact-sec .container .contact > form .box > textarea:valid ~ span {
     transform: translateY(0%);
     font-size: 0.95rem;
 }
 
-.Contact-sec .container .contact>form .box>input:focus~i,
-.Contact-sec .container .contact>form .box>input:valid~i,
-.Contact-sec .container .contact>form .box>textarea:focus~i,
-.Contact-sec .container .contact>form .box>textarea:valid~i {
+.Contact-sec .container .contact > form .box > input:focus ~ i,
+.Contact-sec .container .contact > form .box > input:valid ~ i,
+.Contact-sec .container .contact > form .box > textarea:focus ~ i,
+.Contact-sec .container .contact > form .box > textarea:valid ~ i {
     box-shadow: inset 0 0 0.625rem rgba(0, 0, 0, 0.25);
     height: 100%;
     border-color: var(--text-color);
@@ -1521,9 +1538,11 @@ nav.ar ul li:nth-child(5).active~.indicator {
 .my-CV {
     min-width: 100vw;
     max-width: 100vw;
-    background-image: linear-gradient(387deg,
-            var(--master-color) 0%,
-            var(--hight-contrast) 99%);
+    background-image: linear-gradient(
+        387deg,
+        var(--master-color) 0%,
+        var(--hight-contrast) 99%
+    );
 }
 
 .my-CV .container {
@@ -1570,7 +1589,7 @@ nav.ar ul li:nth-child(5).active~.indicator {
     letter-spacing: 0.125rem;
 }
 
-.my-CV .container .content .resume .more-info p>span {
+.my-CV .container .content .resume .more-info p > span {
     letter-spacing: 0.125rem;
     font-size: 1.75rem;
     color: var(--third-color);
@@ -1608,21 +1627,32 @@ nav.ar ul li:nth-child(5).active~.indicator {
     color: var(--master-color);
     cursor: pointer;
     transition: calc(var(--transition) * 1.5);
-    background-image: linear-gradient(to right, var(--fifth-color) 50%, var(--text-color) 50%);
+    background-image: linear-gradient(
+        to right,
+        var(--fifth-color) 50%,
+        var(--text-color) 50%
+    );
     background-size: 200% 100%;
     background-position: right bottom;
 }
 
 .my-CV.en .container .content .resume .btns .btn {
     background-position: right bottom !important;
-    background-image: linear-gradient(to right, var(--fifth-color) 50%, var(--text-color) 50%) !important;
+    background-image: linear-gradient(
+        to right,
+        var(--fifth-color) 50%,
+        var(--text-color) 50%
+    ) !important;
 }
 
 .my-CV.ar .container .content .resume .btns .btn {
     background-position: left bottom !important;
-    background-image: linear-gradient(to left, var(--fifth-color) 50%, var(--text-color) 50%) !important;
+    background-image: linear-gradient(
+        to left,
+        var(--fifth-color) 50%,
+        var(--text-color) 50%
+    ) !important;
 }
-
 
 .my-CV .container .content .resume .btns .btn:hover {
     color: var(--text-color);
@@ -1646,25 +1676,25 @@ nav.ar ul li:nth-child(5).active~.indicator {
     justify-content: flex-start;
 }
 
-.my-CV .container .content .resume .social-media>a {
+.my-CV .container .content .resume .social-media > a {
     transition: calc(var(--transition) * 2);
     padding: 0.3125rem;
     border: 0.0625rem solid transparent;
 }
 
-.my-CV .container .content .resume .social-media>a:hover {
+.my-CV .container .content .resume .social-media > a:hover {
     border: 0.0625rem solid var(--third-color);
     border-radius: 50%;
 }
 
-.my-CV .container .content .resume .social-media>a path,
-.my-CV .container .content .resume .social-media>a svg {
+.my-CV .container .content .resume .social-media > a path,
+.my-CV .container .content .resume .social-media > a svg {
     fill: var(--text-color);
     transition: var(--transition);
 }
 
-.my-CV .container .content .resume .social-media>a:hover path,
-.my-CV .container .content .resume .social-media>a:hover svg {
+.my-CV .container .content .resume .social-media > a:hover path,
+.my-CV .container .content .resume .social-media > a:hover svg {
     fill: var(--third-color);
 }
 
@@ -1677,7 +1707,6 @@ nav.ar ul li:nth-child(5).active~.indicator {
 .my-CV.ar .container .content .img-sec {
     transform: rotateY(180deg);
 }
-
 
 @media (max-width: 61.9375rem) {
     .my-CV .container .content .img-sec {
@@ -1695,13 +1724,16 @@ nav.ar ul li:nth-child(5).active~.indicator {
     max-width: 100%;
     border: 0.125rem solid var(--text-color);
     z-index: 100;
-    background-image: radial-gradient(circle,
-            var(var(--master-color)) 0%,
-            var(--hight-contrast) 99%);
+    background-image: radial-gradient(
+        circle,
+        var(var(--master-color)) 0%,
+        var(--hight-contrast) 99%
+    );
     overflow: hidden;
     filter: blur(0.1875rem) grayscale(35%);
     transition: var(--transition);
-    animation: radius calc(var(--transition) * 12.3) ease-in-out alternate-reverse infinite both;
+    animation: radius calc(var(--transition) * 12.3) ease-in-out
+        alternate-reverse infinite both;
     cursor: pointer;
 }
 
@@ -1735,6 +1767,16 @@ footer {
     background-color: var(--master-color);
 }
 
+footer p {
+    font-size: 1.625rem;
+    font-weight: bolder;
+}
+
+footer span {
+    font-size: 1.625rem;
+    font-weight: bolder;
+}
+
 /* footer */
 
 /* top button */
@@ -1752,8 +1794,8 @@ span[class="top_button"] {
     font-size: 0.875rem;
     font-weight: bold;
     position: fixed;
-    bottom: 15px;
-    right: 5px;
+    bottom: .9375rem;
+    right: .3125rem;
     cursor: pointer;
     transition: var(--transition);
     transform: translateX(3.125rem);
@@ -1772,26 +1814,28 @@ span[class="top_button"] {
     font-size: 0.875rem;
     font-weight: bold;
     position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: .9375rem;
+    right: .9375rem;
     cursor: pointer;
     border: 0.0625rem solid var(--text-color);
     transition: var(--transition);
     transform: translateX(0rem);
-    background-image: linear-gradient(to right,
-            var(--text-color) 50%,
-            var(--master-color) 50%);
+    background-image: linear-gradient(
+        to right,
+        var(--text-color) 50%,
+        var(--master-color) 50%
+    );
     background-size: 200% 100%;
     background-position: right bottom;
     z-index: 990;
 }
 
-.show_button>i {
+.show_button > i {
     font-size: 1rem;
     color: var(--text-color);
 }
 
-.show_button:hover>i {
+.show_button:hover > i {
     color: var(--master-color);
 }
 
@@ -1808,8 +1852,8 @@ span[class="top_button"] {
     position: fixed;
     top: 0;
     left: 0rem;
-    width: 250px;
-    transform: translateX(-15.9375rem);
+    width: 18.75rem;
+    transform: translateX(-19.375rem);
     background-color: var(--third-color);
     height: 100vh;
     z-index: 100;
@@ -1823,62 +1867,61 @@ span[class="top_button"] {
     transform: translateX(0);
 }
 
-.setting-sec.hide-sec>i {
+.setting-sec.hide-sec > i {
     right: 0.1875rem;
     top: 0.3125rem;
-    border-color: #E91E63;
-    scale: .7;
+    border-color: #e91e63;
+    scale: 0.7;
 }
 
-.setting-sec>i {
+.setting-sec > i {
+    min-width: 2rem !important;
+    min-height: 2rem !important;
     position: absolute;
     top: 1.25rem;
-    right: -4.875rem;
+    right: -33%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
-    border: 2px solid transparent;
+    border: .125rem solid transparent;
     transition: var(--transition);
     cursor: pointer;
     padding: 0.5625rem;
     border-radius: 50%;
     aspect-ratio: 1/ 1;
-    min-width: 2rem !important;
-    min-height: 2rem !important;
 }
 
-.setting-sec.hide-sec>i {
-    color: #E91E63;
+.setting-sec.hide-sec > i {
+    color: #e91e63;
     transition: var(--transition);
 }
 
-.setting-sec>i:hover {
+.setting-sec > i:hover {
     transform: rotate(0.5turn);
 }
 
-.setting-sec div>div {
+.setting-sec div > div {
     margin-bottom: 1.5625rem;
-    gap: 4px;
+    gap: .25rem;
 }
-.languages-sec >div {
+.languages-sec > div {
     margin-bottom: 1.5625rem;
-    gap: 4px;
+    gap: .25rem;
 }
 
-
-.setting-sec div>p {
+.setting-sec div > p {
     width: 100%;
     color: var(--master-color);
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 1.125rem;
+    letter-spacing: .0625rem;
     user-select: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
 
 .setting-sec .theme-sec {
-    margin-top: 1.25rem;
+    margin-top: 1.875rem;
 }
 
 .setting-sec .theme-sec .themes {
@@ -1930,7 +1973,7 @@ span[class="top_button"] {
     background: radial-gradient(black 40%, white 60%);
 }
 
-.setting-sec .theme-sec .themes .theme.active>span {
+.setting-sec .theme-sec .themes .theme.active > span {
     transition: var(--transition);
     border-color: #009688;
     box-shadow: 0 0 0.3125rem 0.0625rem#009688;
@@ -1945,21 +1988,25 @@ span[class="top_button"] {
     transition: var(--transition);
 }
 
+.setting-sec > div > div > i {
+    color: var(--master-color);
+    margin-inline: .3125rem;
+}
 
 @media (max-width: 47.9375rem) {
     .setting-sec {
         width: 12.5rem;
     }
 
-    .setting-sec.hide-sec>i {
+    .setting-sec.hide-sec > i {
         top: 0.1875rem;
         right: 2%;
-        scale: .7;
+        scale: 0.7;
     }
 
-    .setting-sec>i {
-        top: 8.5%;
-        right: -57%;
+    .setting-sec > i {
+        top: 11.5%;
+        right: -49%;
     }
 
     .setting-sec .theme-sec .themes {
@@ -1969,7 +2016,7 @@ span[class="top_button"] {
 
     .setting-sec .theme-sec .themes .theme {
         justify-content: space-evenly;
-        height: 5rem;
+        height: 2.5rem;
         width: 100%;
         flex-direction: row-reverse;
     }
@@ -1993,9 +2040,9 @@ span[class="top_button"] {
 }
 
 .language-sec {
-    --radius: 8px;
-    --border: 2px;
-    --height: 48px;
+    --radius: .5rem;
+    --border: .125rem;
+    --height: 3rem;
     --speed: 0.25s;
     display: grid;
     place-items: center;
@@ -2017,31 +2064,33 @@ span[class="top_button"] {
 }
 
 .language-sec .tabs {
-    --ease: linear(0,
-            0.1641 3.52%,
-            0.311 7.18%,
-            0.4413 10.99%,
-            0.5553 14.96%,
-            0.6539 19.12%,
-            0.738 23.5%,
-            0.8086 28.15%,
-            0.8662 33.12%,
-            0.9078 37.92%,
-            0.9405 43.12%,
-            0.965 48.84%,
-            0.9821 55.28%,
-            0.992 61.97%,
-            0.9976 70.09%,
-            1);
+    --ease: linear(
+        0,
+        0.1641 3.52%,
+        0.311 7.18%,
+        0.4413 10.99%,
+        0.5553 14.96%,
+        0.6539 19.12%,
+        0.738 23.5%,
+        0.8086 28.15%,
+        0.8662 33.12%,
+        0.9078 37.92%,
+        0.9405 43.12%,
+        0.965 48.84%,
+        0.9821 55.28%,
+        0.992 61.97%,
+        0.9976 70.09%,
+        1
+    );
 }
 
-.language-sec .tabs>.input,
+.language-sec .tabs > .input,
 .sr-only {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: .0625rem;
+    height: .0625rem;
     padding: 0;
-    margin: -1px;
+    margin: -0.0625rem;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -2064,7 +2113,7 @@ span[class="top_button"] {
     --active: 3;
 }
 
-.language-sec .tabs :checked+.label {
+.language-sec .tabs :checked + .label {
     --highlight: 1;
 }
 
@@ -2081,7 +2130,7 @@ span[class="top_button"] {
 }
 
 .language-sec .tabs .label {
-    padding: 0 clamp(10px, 10px + 10px, 20px);
+    padding: 0 clamp(.625rem, .625rem + .625rem, 1.25rem);
     cursor: pointer;
     text-align: center;
     height: 100%;
@@ -2094,7 +2143,7 @@ span[class="top_button"] {
     transition-timing-function: var(--ease, ease);
 }
 
-.input:not(:checked)+.label:hover {
+.input:not(:checked) + .label:hover {
     --highlight: 0.35;
     background: hsl(0 0% 20%);
 }
@@ -2112,16 +2161,12 @@ span[class="top_button"] {
     transition: translate, outline-color;
     transition-duration: var(--speed);
     transition-timing-function: var(--ease, ease);
-    outline: 2px solid transparent;
+    outline: .125rem solid transparent;
 }
 
 .language-sec .tabs:has(:focus-visible)::after {
     outline-color: red;
 }
-
-
-
-
 
 /* setting sec */
 
@@ -2182,7 +2227,6 @@ span[class="top_button"] {
 
 /* animation */
 
-
 .border {
-    border: 1px solid lime;
+    border: .0625rem solid lime;
 }
