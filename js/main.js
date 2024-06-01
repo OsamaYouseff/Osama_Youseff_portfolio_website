@@ -31,14 +31,11 @@ let content = document.querySelectorAll(".projects .card");
 function hide(e) {
   e.classList.remove("img-expend");
   e.classList.add("img-shrink");
-  document.body.style.overflowY = "none";
-  console.log(document.body);
 }
 
 function show(e) {
   e.classList.add("img-expend");
   e.classList.remove("img-shrink");
-  document.body.style.overflowY = "hidden";
 }
 
 ///// when you click on filter tag
@@ -120,55 +117,55 @@ window.addEventListener("scroll", () => {
 //// variables
 let icons = Array.from(document.querySelectorAll(".tool "));
 let colorfulImgs = [
-  '<img src="images/html-c.svg" alt="html-logo" />',
-  '<img src="images/css-c.svg" alt="css-logo" />',
-  '<img src="images/javascript-c.svg" alt="javascript-logo" />',
-  `<img src="images/typescript-c.svg" alt="typescript-logo" />`,
-  `<img src="images/reactjs-c.svg" alt="reactjs-logo" />`,
-  `<img src="images/redux-c.svg" alt="redux-logo" />`,
-  `<img src="images/bootstrap-c.svg" alt="bootstrap-logo" />`,
-  '<img src="images/tailwind-css-c.png" alt="tailwind-css-logo" />',
-  `<img src="images/git-c.svg" alt="Git-logo" />`,
-  `<img src="images/github-c.svg" alt="GitHub-logo" />`,
-  '<img src="images/vs-code-c.svg" alt="vs-code-logo" />',
-  '<img src="images/database-c.png" alt="database-logo" />',
-  '<img src="images/cpp-c.svg" alt="database-logo" />',
-  '<img src="images/cSharp-c.svg" alt="cSharp-logo" />',
-  '<img src="images/postman-c.svg" alt="postman-logo" />',
+  '<img src="images/icons/html-c.svg" alt="html-logo" />',
+  '<img src="images/icons/css-c.svg" alt="css-logo" />',
+  '<img src="images/icons/javascript-c.svg" alt="javascript-logo" />',
+  `<img src="images/icons/typescript-c.svg" alt="typescript-logo" />`,
+  `<img src="images/icons/reactjs-c.svg" alt="reactjs-logo" />`,
+  `<img src="images/icons/redux-c.svg" alt="redux-logo" />`,
+  `<img src="images/icons/bootstrap-c.svg" alt="bootstrap-logo" />`,
+  '<img src="images/icons/tailwind-css-c.png" alt="tailwind-css-logo" />',
+  `<img src="images/icons/git-c.svg" alt="Git-logo" />`,
+  `<img src="images/icons/github-c.svg" alt="GitHub-logo" />`,
+  '<img src="images/icons/vs-code-c.svg" alt="vs-code-logo" />',
+  '<img src="images/icons/database-c.png" alt="database-logo" />',
+  '<img src="images/icons/cpp-c.svg" alt="database-logo" />',
+  '<img src="images/icons/cSharp-c.svg" alt="cSharp-logo" />',
+  '<img src="images/icons/postman-c.svg" alt="postman-logo" />',
 ];
 let darkImgs = [
-  '<img src="images/html.svg" alt="html-logo" />',
-  '<img src="images/css.svg" alt="css-logo" />',
-  '<img src="images/javascript.svg" alt="javascript-logo" />',
-  `<img src="images/typescript.svg" alt="typescript-logo" />`,
-  `<img src="images/reactjs.svg" alt="reactjs-logo" />`,
-  `<img src="images/redux.svg" alt="redux-logo" />`,
-  `<img src="images/bootstrap.svg" alt="bootstrap-logo" />`,
-  '<img src="images/tailwind-css.png" alt="tailwind-css-logo" />',
-  `<img src="images/git.svg" alt="Git-logo" />`,
-  `<img src="images/github.svg" alt="GitHub-logo" />`,
-  '<img src="images/vs-code.png" alt="vs-code-logo" />',
-  '<img src="images/database.png" alt="database-logo" />',
-  '<img src="images/cpp.svg" alt="database-logo" />',
-  '<img src="images/cSharp.svg" alt="cSharp-logo" />',
-  '<img src="images/postman.svg" alt="postman-logo" />',
+  '<img src="images/icons/html.svg" alt="html-logo" />',
+  '<img src="images/icons/css.svg" alt="css-logo" />',
+  '<img src="images/icons/javascript.svg" alt="javascript-logo" />',
+  `<img src="images/icons/typescript.svg" alt="typescript-logo" />`,
+  `<img src="images/icons/reactjs.svg" alt="reactjs-logo" />`,
+  `<img src="images/icons/redux.svg" alt="redux-logo" />`,
+  `<img src="images/icons/bootstrap.svg" alt="bootstrap-logo" />`,
+  '<img src="images/icons/tailwind-css.png" alt="tailwind-css-logo" />',
+  `<img src="images/icons/git.svg" alt="Git-logo" />`,
+  `<img src="images/icons/github.svg" alt="GitHub-logo" />`,
+  '<img src="images/icons/vs-code.png" alt="vs-code-logo" />',
+  '<img src="images/icons/database.png" alt="database-logo" />',
+  '<img src="images/icons/cpp.svg" alt="database-logo" />',
+  '<img src="images/icons/cSharp.svg" alt="cSharp-logo" />',
+  '<img src="images/icons/postman.svg" alt="postman-logo" />',
 ];
 let lightImages = [
-  '<img src="images/html-w.svg" alt="html-logo" />',
-  '<img src="images/css-w.svg" alt="css-logo" />',
-  '<img src="images/javascript-w.svg" alt="javascript-logo" />',
-  `<img src="images/typescript-w.svg" alt="typescript-logo" />`,
-  `<img src="images/reactjs-w.svg" alt="reactjs-logo" />`,
-  `<img src="images/redux-w.svg" alt="redux-logo" />`,
-  `<img src="images/bootstrap-w.svg" alt="bootstrap-logo" />`,
-  '<img src="images/tailwind-css-w.svg" alt="tailwind-css-logo" />',
-  `<img src="images/git-w.svg" alt="Git-logo" />`,
-  `<img src="images/github-w.svg" alt="GitHub-logo" />`,
-  '<img src="images/vs-code-w.svg" alt="vs-code-logo" />',
-  '<img src="images/database-w.png" alt="database-logo" />',
-  '<img src="images/cpp-w.svg" alt="database-logo" />',
-  '<img src="images/cSharp-w.svg" alt="cSharp-logo" />',
-  '<img src="images/postman-w.svg" alt="postman-logo" />',
+  '<img src="images/icons/html-w.svg" alt="html-logo" />',
+  '<img src="images/icons/css-w.svg" alt="css-logo" />',
+  '<img src="images/icons/javascript-w.svg" alt="javascript-logo" />',
+  `<img src="images/icons/typescript-w.svg" alt="typescript-logo" />`,
+  `<img src="images/icons/reactjs-w.svg" alt="reactjs-logo" />`,
+  `<img src="images/icons/redux-w.svg" alt="redux-logo" />`,
+  `<img src="images/icons/bootstrap-w.svg" alt="bootstrap-logo" />`,
+  '<img src="images/icons/tailwind-css-w.svg" alt="tailwind-css-logo" />',
+  `<img src="images/icons/git-w.svg" alt="Git-logo" />`,
+  `<img src="images/icons/github-w.svg" alt="GitHub-logo" />`,
+  '<img src="images/icons/vs-code-w.svg" alt="vs-code-logo" />',
+  '<img src="images/icons/database-w.png" alt="database-logo" />',
+  '<img src="images/icons/cpp-w.svg" alt="database-logo" />',
+  '<img src="images/icons/cSharp-w.svg" alt="cSharp-logo" />',
+  '<img src="images/icons/postman-w.svg" alt="postman-logo" />',
 ];
 
 function changeIcons(currData) {
