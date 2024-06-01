@@ -26,14 +26,19 @@ window.onload = checkThemeFromLocal;
 let tabs = document.querySelectorAll(".tabs li");
 let content = document.querySelectorAll(".projects .card");
 
+
+
 function hide(e) {
   e.classList.remove("img-expend");
   e.classList.add("img-shrink");
+  document.body.style.overflowY = "none";
+  console.log(document.body);
 }
 
 function show(e) {
   e.classList.add("img-expend");
   e.classList.remove("img-shrink");
+  document.body.style.overflowY = "hidden";
 }
 
 ///// when you click on filter tag
@@ -57,6 +62,7 @@ tabs.forEach((li) => {
     content.forEach((card) => {
       if (myLink.includes(card)) {
         show(card);
+
       } else {
         hide(card);
       }
@@ -352,11 +358,13 @@ let myImgs = Array.from(document.querySelectorAll(".card img"));
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("preview-window")) {
     animateDown(e.target);
+    stopScrolling(false);
     setTimeout(() => {
       e.target.remove();
     }, 450);
   } else if (e.target.classList.contains("preview-img")) {
     animateDown(e.target.parentElement);
+    stopScrolling(false);
     setTimeout(() => {
       e.target.parentElement.remove();
     }, 450);
@@ -374,8 +382,6 @@ myProjects.forEach(function (pro) {
     ) {
       return;
     } else {
-      // console.log(e.target.parentElement);
-      // console.log(e.target.parentElement.classList);
       let myDiv = document.createElement("div");
       myDiv.classList = "preview-window";
       let myImg = this.children[0].cloneNode(true);
@@ -384,6 +390,7 @@ myProjects.forEach(function (pro) {
       document.body.appendChild(myDiv);
       setTimeout(() => {
         animateUp(myDiv);
+        stopScrolling(true);
       }, 0);
     }
   });
@@ -391,6 +398,9 @@ myProjects.forEach(function (pro) {
 
 function animateUp(ele) {
   ele.style.top = `0%`;
+}
+function stopScrolling(stop) {
+  document.body.style.overflowY = (stop ? "hidden" : "scroll");
 }
 function animateDown(ele) {
   ele.style.top = `150%`;
