@@ -12,21 +12,21 @@
 
 ## Skills
 
--   HTML5
--   CSS3
--   JavaScript
--   TypeScript
--   React.js
--   Responsive Web Design
--   Git
--   GitHub
--   Bootstrap
--   Tailwind CSS
--   Material UI
--   Database
--   API
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- React.js
+- Responsive Web Design
+- Git
+- GitHub
+- Bootstrap
+- Tailwind CSS
+- Material UI
+- Database
+- API
 
 ## Contact Me
 
--   **Email:** osamaseto2002@gmail.com
--   **LinkedIn:** [Connect](https://www.linkedin.com/in/osama-youseff-5341a3224/)
+- **Email:** osamaseto2002@gmail.com
+- **LinkedIn:** [Connect](https://www.linkedin.com/in/osama-youseff-5341a3224/)
