@@ -273,11 +273,11 @@ nav ul li.active a .icon {
 nav ul li a .text {
     position: absolute;
     font-weight: 600;
-    font-size: 0.6rem;
+    font-size: 0.2rem;
     color: var(--text-color);
     text-transform: uppercase;
     transform: translateY(0);
-    letter-spacing: 0.05rem;
+    /* letter-spacing: 0.05rem; */
     opacity: 0;
     z-index: 10;
 }
@@ -376,33 +376,21 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     position: relative;
     aspect-ratio: 1 / 1;
     border: 0.0938rem solid transparent;
-    padding: 0.1875rem;
-    transition: calc(var(--transition) * 0.7) linear;
-    border-radius: 0.25rem;
-    min-width: 5rem;
-    max-height: 2.5rem;
+    padding: 6px;
+    transition: all calc(var(--transition) * 0.7) linear;
+    border-radius: 6px;
+    max-height: 3rem;
 }
 
 .landing-page .side-bar .social a:hover {
-    border-color: var(--text-color);
+    border-color: var(--third-color);
     min-width: 2.5rem;
+    scale: 1.1;
+}
+.landing-page .side-bar .social a:hover svg path {
+    fill: var(--third-color);
 }
 
-.landing-page .side-bar .social.en a:hover {
-    border-right-color: transparent;
-}
-
-.landing-page .side-bar .social.ar a:hover {
-    border-left-color: transparent;
-}
-
-.landing-page .side-bar .social.en a:hover {
-    transform: translateX(-1.5625rem);
-}
-
-.landing-page .side-bar .social.ar a:hover {
-    transform: translateX(1.5625rem);
-}
 
 .landing-page .side-bar .social a::before {
     position: absolute;
@@ -432,10 +420,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     transition: var(--transition);
 }
 
-.landing-page .side-bar .social a:hover svg {
-    transform: scale(0.9);
-}
-
 .landing-page .side-bar .social a svg path {
     fill: var(--text-color);
     transition: calc(var(--transition) * 0.7) linear;
@@ -458,25 +442,7 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     outline: 0.0625rem solid transparent;
 }
 
-.landing-page .side-bar .social.en a span {
-    position: absolute;
-    transform: translateX(-6.25rem);
-}
 
-.landing-page .side-bar .social.ar a span {
-    position: absolute;
-    transform: translateX(6.25rem);
-}
-
-.landing-page .side-bar .social.en a:hover span {
-    transform: translateX(3.625rem);
-    outline-color: var(--text-color);
-}
-
-.landing-page .side-bar .social.ar a:hover span {
-    transform: translateX(-3.625rem);
-    outline-color: var(--text-color);
-}
 
 @media (max-width: 47.9375rem) {
     .landing-page .side-bar .social a {
@@ -488,18 +454,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
         transform: translateX(-0.625rem);
     }
 
-    .landing-page .side-bar .social.en a span {
-        min-width: 3.4375rem;
-        min-width: 4.375rem;
-    }
-
-    .landing-page .side-bar .social.en a:hover span {
-        transform: translateX(3.4375rem);
-    }
-
-    .landing-page .side-bar .social.ar a:hover span {
-        transform: translateX(-3.4375rem);
-    }
 }
 
 .landing-page .side-bar > .space {
@@ -1078,10 +1032,10 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     padding: 3.25rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     position: relative;
-    gap: 2rem 0.5rem;
+    gap: 2rem 1rem;
 }
 
 @media (max-width: 990px) {
@@ -1130,15 +1084,13 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
 }
 
 .img-expend {
-    width: 23.125rem;
-    position: relative;
     opacity: 1;
+    scale: 1;
 }
 
 .img-shrink {
-    width: 0rem;
-    margin: -0.625rem;
     opacity: 0;
+    scale: 0;
     position: absolute !important;
 }
 
@@ -1166,11 +1118,17 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     padding-bottom: 0.9375rem;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
     .card {
         width: calc((100% / 4.03) - (2 * 0.9375rem));
     }
 }
+@media (max-width: 1440px) {
+    .card {
+        width: calc((100% / 3.03) - (2 * 0.9375rem));
+    }
+}
+
 
 @media (max-width: 61.875rem) {
     .card {
