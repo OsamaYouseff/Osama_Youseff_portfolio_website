@@ -273,7 +273,7 @@ nav ul li.active a .icon {
 nav ul li a .text {
     position: absolute;
     font-weight: 600;
-    font-size: 0.2rem;
+    font-size: 0.7rem;
     color: var(--text-color);
     text-transform: uppercase;
     transform: translateY(0);
@@ -391,7 +391,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     fill: var(--third-color);
 }
 
-
 .landing-page .side-bar .social a::before {
     position: absolute;
     content: "\f060";
@@ -442,8 +441,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     outline: 0.0625rem solid transparent;
 }
 
-
-
 @media (max-width: 47.9375rem) {
     .landing-page .side-bar .social a {
         min-width: 2.5rem;
@@ -453,7 +450,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     .landing-page .side-bar .social.en a:hover {
         transform: translateX(-0.625rem);
     }
-
 }
 
 .landing-page .side-bar > .space {
@@ -1032,7 +1028,7 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
     padding: 3.25rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     position: relative;
     gap: 2rem 1rem;
@@ -1128,7 +1124,6 @@ nav.ar ul li:nth-child(5).active ~ .indicator {
         width: calc((100% / 3.03) - (2 * 0.9375rem));
     }
 }
-
 
 @media (max-width: 61.875rem) {
     .card {
