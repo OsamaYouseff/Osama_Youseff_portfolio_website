@@ -33,9 +33,226 @@
   <link rel="stylesheet" href="css/style_minfired.css" />
   <!--// importing local modules  //-->
   <title>Osama Youseff's portfolio</title>
+
+  <!-- Outdated-site notice styles -->
+  <style>
+    /* ── Top Banner ───────────────────────────────────────── */
+    #outdated-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99999;
+      background: linear-gradient(90deg, #ff6b35, #f7c59f, #ff6b35);
+      background-size: 200% 100%;
+      animation: bannerShimmer 4s linear infinite;
+      color: #1a1a2e;
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+      padding: 10px 48px;
+      box-shadow: 0 3px 16px rgba(255,107,53,.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1.5;
+    }
+    @keyframes bannerShimmer {
+      0%   { background-position: 0%   50%; }
+      100% { background-position: 200% 50%; }
+    }
+    #outdated-banner .banner-icon { font-size: 18px; flex-shrink: 0; }
+    #outdated-banner a.banner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #1a1a2e;
+      color: #f7c59f;
+      border-radius: 20px;
+      padding: 3px 14px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 13px;
+      transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    #outdated-banner a.banner-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    }
+    #banner-close {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #1a1a2e;
+      opacity: .65;
+      transition: opacity .2s;
+      line-height: 1;
+      padding: 4px 6px;
+    }
+    #banner-close:hover { opacity: 1; }
+    /* push body down so banner never overlaps content */
+    body { padding-top: 46px; }
+
+    /* ── Overlay Popup ─────────────────────────────────────── */
+    #outdated-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,30,.82);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      animation: overlayFadeIn .4s ease forwards;
+    }
+    #outdated-overlay.hidden {
+      animation: overlayFadeOut .35s ease forwards;
+      pointer-events: none;
+    }
+    @keyframes overlayFadeIn  { from { opacity:0; } to { opacity:1; } }
+    @keyframes overlayFadeOut { from { opacity:1; } to { opacity:0; } }
+    #outdated-popup {
+      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      border: 1px solid rgba(255,107,53,.35);
+      border-radius: 20px;
+      padding: 40px 36px 32px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(255,107,53,.15);
+      animation: popupBounceIn .5s cubic-bezier(.34,1.56,.64,1) forwards;
+      position: relative;
+      font-family: 'Oswald', sans-serif;
+    }
+    @keyframes popupBounceIn {
+      from { opacity:0; transform: scale(.8) translateY(30px); }
+      to   { opacity:1; transform: scale(1) translateY(0);    }
+    }
+    .popup-emoji {
+      font-size: 52px;
+      display: block;
+      margin-bottom: 12px;
+      animation: wobble 2.5s ease-in-out infinite;
+    }
+    @keyframes wobble {
+      0%,100% { transform: rotate(-6deg); }
+      50%      { transform: rotate(6deg);  }
+    }
+    #outdated-popup h2 {
+      color: #f7c59f;
+      font-size: clamp(18px, 4vw, 24px);
+      margin: 0 0 14px;
+      line-height: 1.35;
+    }
+    #outdated-popup p {
+      color: #c8c8d4;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0 0 24px;
+      font-family: sans-serif;
+    }
+    .popup-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ff6b35, #f7c59f);
+      color: #1a1a2e;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border-radius: 30px;
+      padding: 12px 28px;
+      box-shadow: 0 6px 24px rgba(255,107,53,.45);
+      transition: transform .2s, box-shadow .2s;
+      margin-bottom: 16px;
+    }
+    .popup-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 32px rgba(255,107,53,.6);
+    }
+    #popup-dismiss {
+      display: block;
+      margin: 0 auto;
+      background: none;
+      border: 1px solid rgba(200,200,212,.3);
+      color: #888;
+      font-size: 12px;
+      font-family: sans-serif;
+      padding: 6px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    #popup-dismiss:hover { border-color: #f7c59f; color: #f7c59f; }
+
+    /* RTL support when Arabic is active */
+    html[dir="rtl"] #outdated-banner { direction: rtl; }
+    html[dir="rtl"] #banner-close { right: auto; left: 12px; }
+    html[dir="rtl"] #outdated-popup { direction: rtl; }
+  </style>
+  <!-- // Outdated-site notice styles // -->
 </head>
 
 <body>
+
+  <!-- ── Outdated-site Top Banner ───────────────────────── -->
+  <div id="outdated-banner" role="banner">
+    <span class="banner-icon">⚠️</span>
+    <span id="banner-text"
+          data-en="This portfolio is outdated. Visit my updated portfolio for the latest work!"
+          data-ar="هذا البورتفوليو قديم. زُر ملفي المحدّث للاطلاع على أحدث أعمالي!"
+    >This portfolio is outdated. Visit my updated portfolio for the latest work!</span>
+    <a href="https://osama-youseff-portfolio-rosy.vercel.app/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="banner-link"
+       id="banner-link"
+       data-en="🚀 Visit New Portfolio"
+       data-ar="🚀 زيارة الموقع الجديد"
+    >🚀 Visit New Portfolio</a>
+    <button id="banner-close" aria-label="Close banner" title="Close">✕</button>
+  </div>
+  <!-- // Outdated-site Top Banner // -->
+
+  <!-- ── Outdated-site Overlay Popup ────────────────────── -->
+  <div id="outdated-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div id="outdated-popup">
+      <span class="popup-emoji">🚧</span>
+      <h2 id="popup-title"
+          data-en="You're viewing an outdated portfolio!"
+          data-ar="أنت تشاهد ملف أعمال قديم!"
+      >You're viewing an outdated portfolio!</h2>
+      <p id="popup-body"
+         data-en="This is my old portfolio website. My new portfolio has updated projects, skills, and a much better design. Click below to visit it."
+         data-ar="هذا موقعي القديم. بورتفوليو الجديد يتضمن مشاريع محدّثة ومهارات أحدث وتصميم أفضل بكثير. اضغط أدناه لزيارته."
+      >This is my old portfolio website. My new portfolio has updated projects, skills, and a much better design. Click below to visit it.</p>
+      <a href="https://osama-youseff-portfolio-rosy.vercel.app/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="popup-cta"
+         id="popup-cta"
+         data-en="🚀 Go to New Portfolio"
+         data-ar="🚀 انتقل إلى البورتفوليو الجديد"
+      >🚀 Go to New Portfolio</a>
+      <button id="popup-dismiss"
+              data-en="No thanks, continue to old site"
+              data-ar="لا شكراً، تابع إلى الموقع القديم"
+      >No thanks, continue to old site</button>
+    </div>
+  </div>
+  <!-- // Outdated-site Overlay Popup // -->
   <!-- landing page-sec -->
   <div class="landing-page section p-relative d-flex" id="side-bar">
     <!-- nav-sec -->
@@ -1003,6 +1220,81 @@
 
   </div>
   <!--// setting sec //-->
+
+  <!-- Outdated-site notice script -->
+  <script>
+    (function () {
+      var NEW_PORTFOLIO = 'https://osama-youseff-portfolio-rosy.vercel.app/';
+
+      /* ── helpers ──────────────────────────────────────── */
+      function applyLang(lang) {
+        var attr = 'data-' + lang;
+        // banner
+        var bt = document.getElementById('banner-text');
+        var bl = document.getElementById('banner-link');
+        if (bt && bt.getAttribute(attr)) bt.textContent = bt.getAttribute(attr);
+        if (bl && bl.getAttribute(attr)) bl.textContent = bl.getAttribute(attr);
+        // popup
+        var pt = document.getElementById('popup-title');
+        var pb = document.getElementById('popup-body');
+        var pc = document.getElementById('popup-cta');
+        var pd = document.getElementById('popup-dismiss');
+        if (pt && pt.getAttribute(attr)) pt.textContent = pt.getAttribute(attr);
+        if (pb && pb.getAttribute(attr)) pb.textContent = pb.getAttribute(attr);
+        if (pc && pc.getAttribute(attr)) pc.textContent = pc.getAttribute(attr);
+        if (pd && pd.getAttribute(attr)) pd.textContent = pd.getAttribute(attr);
+      }
+
+      /* ── close banner ─────────────────────────────────── */
+      var bannerClose = document.getElementById('banner-close');
+      var banner = document.getElementById('outdated-banner');
+      if (bannerClose && banner) {
+        bannerClose.addEventListener('click', function () {
+          banner.style.transition = 'opacity .3s';
+          banner.style.opacity = '0';
+          setTimeout(function () {
+            banner.style.display = 'none';
+            document.body.style.paddingTop = '0';
+          }, 300);
+        });
+      }
+
+      /* ── close popup ──────────────────────────────────── */
+      function closeOverlay() {
+        var overlay = document.getElementById('outdated-overlay');
+        if (!overlay) return;
+        overlay.classList.add('hidden');
+        setTimeout(function () { overlay.style.display = 'none'; }, 380);
+      }
+      var dismissBtn = document.getElementById('popup-dismiss');
+      if (dismissBtn) dismissBtn.addEventListener('click', closeOverlay);
+      // close on backdrop click
+      var overlay = document.getElementById('outdated-overlay');
+      if (overlay) {
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) closeOverlay();
+        });
+      }
+      // close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeOverlay();
+      });
+
+      /* ── sync with existing language switcher ─────────── */
+      // Patch the global changeLanguageForElements if it exists
+      document.addEventListener('DOMContentLoaded', function () {
+        var origFn = window.changeLanguageForElements;
+        window.changeLanguageForElements = function (lang) {
+          if (typeof origFn === 'function') origFn(lang);
+          applyLang(lang);
+        };
+        // Apply initial language from localStorage (site saves 'lang' key)
+        var savedLang = localStorage.getItem('lang') || 'en';
+        applyLang(savedLang);
+      });
+    })();
+  </script>
+  <!-- // Outdated-site notice script // -->
 
   <!-- JavaScript files -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
